@@ -3,7 +3,6 @@
 ## About the Project
 ### Goals
 - Clean the current data set. Document the code that take the original source to the workable data.
-- Summarize the data.
 - Draw conclusions on the individual who wore the fitness tracker
 - Make predictions on the two weeks of missing data
 ### Background
