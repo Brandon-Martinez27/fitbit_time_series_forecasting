@@ -42,7 +42,20 @@ Scenario:
 
 ## Initial Thoughts & Hypotheses
 ### Thoughts
+- The data is mostly the activity of the individual including: date, calories burned, steps, distance, floors, minutes, sedentary, minutes lightly active, minutes fairly active, minutes very active, activity calories.
+- These will be the features worth exploring
+- Data is from April of 2018 to the end of the year
+- Food log, and calories in sections are inconsistent and should be omitted since the majority are null values.
+- May need to change some of the features to match the data
+- Going to look into the calories burned over time.
+- What part of the year does this individual burn the most calories?
+- Does this individual burn more calories on the weekends?
+- Based on activity level can we determine how fit this individual is?
+
 ### Hypotheses
+- The steps and calories burned have a direct correlation.
+- This individual burns more calories in the summertime.
+- Floors and calories burned have a direct correlation.
 
 ## Project Steps
 ### Acquire
