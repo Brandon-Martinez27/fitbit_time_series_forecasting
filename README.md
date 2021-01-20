@@ -59,7 +59,28 @@ Scenario:
 
 ## Project Steps
 ### Acquire
+1. Import necessary modules
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+2. Clean up the data in an spreadsheet for easier reading into a Pandas DataFrame
+  - Food log and Calories in sections are mostly null so they were eliminated
+  - Saved to a CSV in local repository
+3. Peeked into and summarized data (columns, rows, data types, nulls, etc.)
+ 
 ### Prepare
+1. Data Cleaning (*prepare.py*)
+  - Dropped last 22 days/rows since we will be predicting them (they were null).
+  - Lowercase the features, use a '_' to replace whitespace (best practice convention).
+  - Change `date` column --> 'datetime' type
+  - Change the index --> `date`, sorted index by date
+  - Drop remaining `date` column
+  - Change the commas in `calories_burned`, `steps`, `minutes_sedentary`, `activity_calories` --> '_'
+  - Change columns to 'int' type
+2. Summarized the preppared data
+3. Plotted the Distribution of each variable
+
 ### Explore
 ### Model
 ### Conclusions
