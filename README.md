@@ -79,9 +79,19 @@ Scenario:
   - Change the commas in `calories_burned`, `steps`, `minutes_sedentary`, `activity_calories` --> '_'
   - Change columns to 'int' type
 2. Summarized the preppared data
-3. Plotted the Distribution of each variable
+  - Peek into cleaned data
+3. Split the data into train and test for exploration
+  - Split by percentage
+  - Visualized split
 
 ### Explore
+1. Plotted the distribution (histograms) of each of the 9 target variables
+  - Noted the patterns
+2. Plotted targets by categorical variables
+  - Visualized average for each target by month 
+  - Visualied average for each target by weekday
+    - bar and box plots
+
 ### Model
 ### Conclusions
 
