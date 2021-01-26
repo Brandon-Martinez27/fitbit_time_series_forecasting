@@ -46,21 +46,30 @@ def prep_fitbit():
 
 def split_fitbit(df):
     '''
-    Splits the df into 70% train, 30% test,
-    then plots the visualization for the split
-    using the calories_burned variable
+    Splits the df into 50% train, 30% validate, 
+    and 20% test
     '''
-    # 70% of the data will be train
-    train_size = .70
-    # n is set to the number of rows in the data (225)
-    n = df.shape[0]
-    # number of rows used to index for train data set
-    test_start_index = round(train_size * n)
+    # set the percentage/size for each split
+    train_size = int(len(df) * .5)
+    validate_size = int(len(df) * .3)
+    test_size = int(len(df) - train_size - validate_size)
+    validate_end_index = train_size + validate_size
 
-    train = df[:test_start_index] # everything up (not including) to the test_start_index
-    test = df[test_start_index:] # everything from the test_start_index to the end
-
-    # visulaize the split using calories burned as the y variable
-    plt.plot(train.index, train.calories_burned)
-    plt.plot(test.index, test.calories_burned)
-    return train, test
+    # split into train, validation, test
+    train = df[: train_size]
+    validate = df[train_size : validate_end_index]
+    test = df[validate_end_index : ]
+    return train, validate, test
+    
+def visualize_split(train, validate, test):
+    '''
+    Shows the plot for each variable and respective split
+    '''
+    for col in train.drop(columns=['month', 'weekday']).columns:
+        plt.figure(figsize=(12,4))
+        plt.plot(train[col])
+        plt.plot(validate[col])
+        plt.plot(test[col])
+        plt.ylabel(col)
+        plt.title(col)
+        plt.show()
