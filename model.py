@@ -47,7 +47,6 @@ def plot_and_eval(train, validate, yhat_df, target_var):
     print(target_var, '-- RMSE: {:.0f}'.format(rmse))
     plt.show()
 
-
 def append_eval_df(eval_df, validate, yhat_df, model_type, target_var):
     '''
     This function will store rmse for comparison purposes
@@ -60,3 +59,12 @@ def append_eval_df(eval_df, validate, yhat_df, model_type, target_var):
     d = pd.DataFrame(d)
     # return the data frame with the new data added
     return eval_df.append(d, ignore_index = True)
+
+def make_predictions(d, validate):
+    '''
+    This function creates yhat_df which is the dataframe 
+    that contains the predictions on the validate dataset.
+    '''
+    yhat_df = pd.DataFrame(d, 
+                       index = validate.index)
+    return yhat_df
