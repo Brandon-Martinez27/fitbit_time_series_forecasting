@@ -93,6 +93,23 @@ Scenario:
     - bar and box plots
 
 ### Model
+Ran 3 basic models that used a single value to predict on the validate data set and measured the performances using RMSE.
+
+1. Last Observed Value: The simplest method for forecasting is to predict all future values to be the last observed value.
+  - Make predictions using the last value in train as a prediction for every single day forward.
+  - Plot the actual vs. the predicted values to compare for each target variable
+  - Evaluated each variable by its RMSE, displayed in a DataFrame
+2. Simple Average: Take the simple average of historical values and use that value to predict future values.
+  - Make predictions using the average as a prediction for every single day forward..
+  - Plot the actual vs. the predicted values to compare for each target variable
+  - Evaluated each variable by its RMSE, displayed in a DataFrame
+3. Moving Average: the average over the last 30-days will be used as the forecasted value.
+  - Make predictions using the last 30-day average in train as a prediction for every single day forward.
+  - Plot the actual vs. the predicted values to compare for each target variable
+  - Evaluated each variable by its RMSE, displayed in a DataFrame
+  
+Evaluated these three models to see which performed best. The results were interesting in that different variables had different models that worked better.
+
 ### Conclusions
 
 ## How to Reproduce
