@@ -2,7 +2,7 @@
 
 ## About the Project
 ### Goals
-- Clean the current data set. Document the code that take the original source to the workable data.
+- Clean the current data set. Document the code that takes the original source to the workable data.
 - Draw conclusions on the individual who wore the fitness tracker
 - Make predictions on the two weeks of missing data
 ### Background
@@ -35,10 +35,26 @@ Scenario:
 - The above information distilled into two slides that can be shared with a general audience. Include at least one visualization, and make sure that the visualization is clearly labeled.
 
 ### Acknowledgments
-- Data
+- Data (fitbit)
 - Codeup Curriculum
+- [FitBit Floors](https://help.fitbit.com/articles/en_US/Help_article/1141.htm)
+- [FitBit Activity](https://help.fitbit.com/articles/en_US/Help_article/1379.htm?Highlight=activity)
 
 ## Data Dictionary
+| Feature                | Description                                                             | Data Type      |
+|------------------------|-------------------------------------------------------------------------|----------------|
+| date                   | The date in format: yyyy-mm-dd.                                         | datetime/index |
+| calories_burned        | The number of total calories burned that day.                           | integer        |
+| steps                  | The number of steps tracked that day.                                   | integer        |
+| distance               | The number of miles traveled tracked that day.                          | float          |
+| floors                 | The number of floors (about 10 feet or 3 meters) climbed that day.      | float          |
+| minutes_sedentary      | The total number of minutes the person isn't walking or taking steps.   | integer        |
+| minutes_lightly_active | The total number of minutes the person is within their 'fat burn' zone. | float          |
+| minutes_fairly_active  | The total number of minutes the person is within their 'cardio' zone.   | float          |
+| minutes_very_active    | The total number of minutes the person is within their 'peak' zone.     | float          |
+| activity_calories      | The total number of calories the person has burned during activity.     | integer        |
+| month                  | The numerical representation of the month. i.e. 1-Jan, etc.             | integer        |
+| weekday                | The day of the week. i.e. Monday, Tuesday, etc.                         | object         |
 
 ## Initial Thoughts & Hypotheses
 ### Thoughts
@@ -114,9 +130,12 @@ Evaluated these three models to see which performed best. The results were inter
 
 ## How to Reproduce
 ### Steps
+
 ### Tools & Requirements
+Python | Pandas | NumPy | Seaborn | Matplotlib | Sci-Kit Learn | Statsmodels (Latest Versions)
 
 ## License
+Standard
 
 ## Creators
-
+Brandon Martinez
