@@ -141,11 +141,14 @@ Ran 2 more complex models to predict on the validate data set and measured the p
 - Created a CSV of the next two week predictions
 
 ### Conclusions
-><b>Clean the current data set to obtain workable data</b>: I used a spreadsheet to clean up the data >initially to be read into a DataFrame from a CSV. I cleaned the data and preprocessed it for exploration and >modeling.
+>**Clean the current data set to obtain workable data**: 
+>I used a spreadsheet to clean up the data initially to be read into a DataFrame from a CSV. I cleaned the data and preprocessed it for exploration and modeling.
 >
-><b>Draw conclusions on the individual who wore the fitness tracker</b>: This person is a weekend warrior. >They stay active on weekends and probably just focus on work duting the week. They're most active in the >summer which is typical for the vacation season. They may be hiking in the early fall since floors are >highest in September.
+>**Draw conclusions on the individual who wore the fitness tracker**: 
+>This person is a weekend warrior. They stay active on weekends and probably just focus on work duting the week. They're most active in the summer which is typical for the vacation season. They may be hiking in the early fall since floors are highest in September.
 >
-><b>Make predictions on the two weeks of missing data</b>: We are basing all our predictions on the 30 day >rolling average since those predictions have the smallest chance of error.
+>**Make predictions on the two weeks of missing data**: 
+>We are basing all our predictions on the 30 day rolling average since those predictions have the smallest chance of error.
     
 <b>Next Steps</b>
 - There isn't enough data. It's was difficult to see any trends or seaonality with less than a years worth of data. With more data, we can spot long term results.
