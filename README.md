@@ -86,7 +86,7 @@ Scenario:
 3. Peeked into and summarized data (columns, rows, data types, nulls, etc.)
  
 ### Prepare
-1. Data Cleaning (*prepare.py*)
+1. Data Cleaning
   - Dropped last 22 days/rows since we will be predicting them (they were null).
   - Lowercase the features, use a '_' to replace whitespace (best practice convention).
   - Change `date` column --> 'datetime' type
@@ -124,12 +124,33 @@ Ran 3 basic models that used a single value to predict on the validate data set 
   - Plot the actual vs. the predicted values to compare for each target variable
   - Evaluated each variable by its RMSE, displayed in a DataFrame
   
-Evaluated these three models to see which performed best. The results were interesting in that different variables had different models that worked better.
+Ran 2 more complex models to predict on the validate data set and measured the performances using RMSE.
+
+1. Holt's Linear Trend: Exponential smoothing applied to both the average and the trend (slope). α / smoothing_level: smoothing parameter for mean. Values closer to 1 will have less of a smoothing effect and will give greater weight to recent values. β / smoothing_slope: smoothing parameter for the slope. Values closer to 1 will give greater weight to recent slope/values.
+  - Make predictions using a slope factor and default parameters in train as a prediction for every single day forward.
+  - Plot the actual vs. the predicted values to compare for each target variable
+  - Evaluated each variable by its RMSE, displayed in a DataFrame
+2. Previous Cycle: Uses period in the training data as a forecast to predict future values.
+  - Make predictions using the last two weeks as predictions for the next two weeks.
+  - Plot the actual vs. the predicted values to compare for each target variable
+  - Evaluated each variable by its RMSE, displayed in a DataFrame
+
+**Best Model: 30 Day Moving Average**
+- Performed ~10% better than Last Observed Value (baseline).
+- Used single values to make prediction on the missing two weeks.
+- Created a CSV of the next two week predictions
 
 ### Conclusions
+><b>Clean the current data set to obtain workable data</b>: I used a spreadsheet to clean up the data >initially to be read into a DataFrame from a CSV. I cleaned the data and preprocessed it for exploration and >modeling.
+>
+><b>Draw conclusions on the individual who wore the fitness tracker</b>: This person is a weekend warrior. >They stay active on weekends and probably just focus on work duting the week. They're most active in the >summer which is typical for the vacation season. They may be hiking in the early fall since floors are >highest in September.
+>
+><b>Make predictions on the two weeks of missing data</b>: We are basing all our predictions on the 30 day >rolling average since those predictions have the smallest chance of error.
+    
+<b>Next Steps</b>
+- There isn't enough data. It's was difficult to see any trends or seaonality with less than a years worth of data. With more data, we can spot long term results.
 
-## How to Reproduce
-### Steps
+- The model used were fairly basic. Exploring/testing new and refined models would improve results. Possibly tweaking some of the parameters and trying a prophet model may do some good.
 
 ### Tools & Requirements
 Python | Pandas | NumPy | Seaborn | Matplotlib | Sci-Kit Learn | Statsmodels (Latest Versions)
